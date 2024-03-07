@@ -23,10 +23,6 @@ public class BookstoreRestTests {
         mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext).build();
     }
 
-    @Test
-    public void statusOkWhenGetBook() throws Exception {
-        mockMvc.perform(get("/books")).andExpect(status().isOk());
-    }
 
     @Test
     public void responseTypeApplicationJson() throws Exception {
@@ -36,8 +32,19 @@ public class BookstoreRestTests {
     }
 
     @Test
+    public void statusOkWhenGetBook() throws Exception {
+        mockMvc.perform(get("/books")).andExpect(status().isOk());
+    }
+
+    @Test
     public void statusOkWhenGetBookById() throws Exception {
         mockMvc.perform(get("/book/{id}", 1))
+        .andExpect(status().isOk());
+    }
+
+    @Test
+    public void statusOkWhenGetCategory() throws Exception {
+        mockMvc.perform(get("/categories"))
         .andExpect(status().isOk());
     }
 

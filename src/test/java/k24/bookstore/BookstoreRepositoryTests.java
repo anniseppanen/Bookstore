@@ -40,7 +40,7 @@ public class BookstoreRepositoryTests {
     }
 
     @Test
-    public void saveBook() {
+    public void addBook() {
         Book book = new Book("New book", "Author", 2024, "ISBN", 10.0, null);
         bookRepository.save(book);
         assertThat(bookRepository.findById(book.getId())).isPresent();
