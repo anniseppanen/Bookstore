@@ -1,5 +1,6 @@
 package k24.bookstore.domain;
 
+import org.hibernate.mapping.List;
 import org.springframework.data.repository.CrudRepository;
 
 

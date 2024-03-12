@@ -36,17 +36,17 @@ public class BookControllerRest {
     public @ResponseBody List<Book> bookListRest() {
         return (List<Book>) bookRepository.findAll();
     }
-    
-    @GetMapping("/categories")
-    public @ResponseBody List<Category> categoryListRest() {
-        return (List<Category>) categoryRepository.findAll();
-    }
 
     @GetMapping("/book/{id}")
     public @ResponseBody Optional<Book> findBookRest(@PathVariable("id") Long id) {
         return bookRepository.findById(id);
     }
 
+    @GetMapping("/categories")
+    public @ResponseBody List<Category> categoryListRest() {
+        return (List<Category>) categoryRepository.findAll();
+    }
+    
     @PutMapping("/book/{id}")
     Book editBook(@RequestBody Book editedBook, @PathVariable Long id) {
         editedBook.setId(id);
