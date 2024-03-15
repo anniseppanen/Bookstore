@@ -27,7 +27,7 @@
 
             <div>
                 <label>Year</label> 
-                <input type="text" th:field="*{publicationYear}" />
+                <input type="text" th:field="*{publication_year}" />
             </div>
 
             <div>
@@ -38,7 +38,7 @@
             <div>
                 <label for="catlist">Category</label>
 			    <select id="catlist" th:field="*{category}" class="form-control">
-       			<option th:each="category: ${categories}" th:value="${category.categoryId}" th:text="${category.name}"></option>
+       			<option th:each="category: ${categories}" th:value="${category.category_id}" th:text="${category.name}"></option>
     		</select>
             </div>
 

@@ -18,7 +18,7 @@ public class BookstoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreApplication.class, args);
 	}
-
+	/* 
 	@Bean
 	public CommandLineRunner demo(BookRepository bookRepository, CategoryRepository categoryRepository, AppUserRepository appUserRepository) {
 		return (args) -> {
@@ -43,6 +43,6 @@ public class BookstoreApplication {
 				System.out.println("Kirjan tiedot: " + book.toString());
 			}
 		};
-	}
+	}*/
 
 }

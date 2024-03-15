@@ -3,31 +3,31 @@ package k24.bookstore.domain;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="UserTable")
+@Table(name="app_user")
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, updatable = false)
+    //@Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "username", nullable = false, unique = true)
+    //@Column(name = "username", nullable = false, unique = true)
     private String username;
 
-    @Column(name = "passwordHash", nullable = false)
-    private String passwordHash;
+    //@Column(name = "password_hash", nullable = false)
+    private String password_hash;
 
-    @Column(name = "email", nullable = false)
+    //@Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "role", nullable = false)
+    //@Column(name = "role", nullable = false)
     private String role;
 
     public AppUser() {}
 
-    public AppUser(String username, String passwordHash, String email, String role) {
+    public AppUser(String username, String password_hash, String email, String role) {
         super();
         this.username = username;
-        this.passwordHash = passwordHash;
+        this.password_hash = password_hash;
         this.email = email;
         this.role = role;
     }
@@ -48,12 +48,12 @@ public class AppUser {
         this.username = username;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getpassword_hash() {
+        return password_hash;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setpassword_hash(String password_hash) {
+        this.password_hash = password_hash;
     }
 
     public String getEmail() {
@@ -74,6 +74,6 @@ public class AppUser {
 
     @Override
     public String toString() {
-        return "AppUser [username=" + username + ", passwordHash=" + passwordHash + ", email=" + email + ", role=" + role + "]";
+        return "AppUser [username=" + username + ", password_hash=" + password_hash + ", email=" + email + ", role=" + role + "]";
     }
 }

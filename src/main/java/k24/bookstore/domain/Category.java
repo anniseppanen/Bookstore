@@ -9,12 +9,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long categoryId;
+    private Long category_id;
     private String name;
 
     @JsonIgnore
@@ -28,12 +30,12 @@ public class Category {
         this.name = name;
     }
 
-    public Long getCategoryId() {
-		return categoryId;
+    public Long getCategory_id() {
+		return category_id;
 	}
 
 	public void setCategoryId(Long id) {
-		this.categoryId = id;
+		this.category_id = id;
     }
 
     public String getName() {

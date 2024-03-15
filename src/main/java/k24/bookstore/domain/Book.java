@@ -6,15 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "book")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String author;
-    private int publicationYear;
+    private int publication_year;
     private String isbn;
     private double price;
 
@@ -24,11 +26,11 @@ public class Book {
 
     public Book() {}
 
-    public Book(String title, String author, int publicationYear, String isbn, double price, Category category) {
+    public Book(String title, String author, int publication_year, String isbn, double price, Category category) {
         super();
         this.title = title;
         this.author = author;
-        this.publicationYear = publicationYear;
+        this.publication_year = publication_year;
         this.isbn = isbn;
         this.price = price;
         this.category = category;
@@ -58,12 +60,12 @@ public class Book {
         this.author = author;
     }
 
-    public int getPublicationYear() {
-        return publicationYear;
+    public int getPublication_year() {
+        return publication_year;
     }
 
-    public void setPublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
+    public void setPublicatio_year(int publication_year) {
+        this.publication_year = publication_year;
     }
 
     public String getIsbn() {
@@ -95,7 +97,7 @@ public class Book {
         return "Book{" +
                 "title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", publicationYear=" + publicationYear +
+                ", publication_year=" + publication_year +
                 ", isbn='" + isbn + '\'' +
                 ", price=" + price +
                 '}';
